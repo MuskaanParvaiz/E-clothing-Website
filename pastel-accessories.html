@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Accessories Collection - Comfy Closet</title>
+    <link rel="shortcut icon" href="./logo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./assets/js/cart.js" defer></script>
+</head>
+<body>
+    <!-- Mobile Nav Bar -->
+<nav id="mobile-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo" style="width:100px; height: 100px;">
+      </a>
+      <button id="menu-btn" class="menu-btn">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="pastel-tops.html">Pastel Tops</a></li>
+        <li><a href="pastel-dresses.html">Pastel Dresses</a></li>
+        <li><a href="pastel-accessories.html">Pastel Accessories</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </nav>
+
+    <!-- Pastel Accessories Collection -->
+    <section id="pastel-accessories" class="pastel-accessories">
+        <div class="container">
+            <h1>Pastel Accessories Collection</h1>
+            <div class="accessories-grid">
+                <!-- Repeat this structure for each accessory -->
+                <div class="accessory-item" data-id="acc1">
+                    <img src="./assets/images/bow.png" alt="Pastel Accessory Name">
+                    <div class="item-content">
+                        <h3>Embroidered Bow</h3>
+                        <p><pre>
+                            Colour: Cream
+                            Material: Khaki
+                        </pre></p>
+                        <p class="price">₹1000</p>
+                    <button class="add-to-cart" data-id="acc1" data-name="Embroidered Bow" data-price="1000" data-image="./assets/images/bow.png">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="accessory-item" data-id="acc2">
+                    <img src="./assets/images/totebag.png" alt="Pastel Accessory Name">
+                    <div class="item-content">
+                        <h3>Hand Painted Tote Bag</h3>
+                        <p><pre>
+                            Colour: Pastel Cream
+                            Material: Canvas
+                        </pre></p>
+                        <p class="price">₹2500</p>
+                    <button class="add-to-cart" data-id="acc2" data-name="Hand Painted Tote Bag" data-price="2500" data-image="./assets/images/totebag.png">Add to Cart</button>
+                </div>
+                </div>
+                <div class="accessory-item" data-id="acc3">
+                    <img src="./assets/images/jewel.png" alt="Pastel Accessory Name">
+                    <div class="item-content">
+                        <h3>Minimal Pearl Pendants</h3>
+                        <p><pre>
+                            Colour: Warm Gold
+                            Material: Anti tarnish Gold
+                        </pre></p>
+                        <p class="price">₹5000</p>
+                    <button class="add-to-cart" data-id="acc3" data-name="Minimal Pendants" data-price="5000" data-image="./assets/images/jewel.png">Add to Cart</button>
+                </div>
+                </div>
+                <!-- Add more accessory-item divs as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="./logo.png" alt="Logo">
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#collection">Collection</a>
+                <a href="index.html#shop">Shop</a>
+                <a href="index.html#blog">Blog</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a id="back-to-top" href="#top">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+    <!-- Scripts -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cart.js"></script>
+
+</body>
+</html>

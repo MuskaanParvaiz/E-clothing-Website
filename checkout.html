@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Comfy Closet</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mobile Nav Bar -->
+<nav id="mobile-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo" style="width:100px; height: 100px;">
+      </a>
+      <button id="menu-btn" class="menu-btn">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="pastel-tops.html">Pastel Tops</a></li>
+        <li><a href="pastel-dresses.html">Pastel Dresses</a></li>
+        <li><a href="pastel-accessories.html">Pastel Accessories</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </nav>
+
+
+    <section id="checkout" class="checkout">
+        <div class="container">
+            <h1>Checkout</h1>
+            <div class="row">
+                <div class="col-md-8">
+            <form id="checkout-form">
+                <h2>Shipping Information</h2>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+                <h2>Payment Information</h2>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <button type="submit" class="btn">Place Order</button>
+            </form>
+            <div class="col-md-4">
+                <div id="order-summary" class="order-summary"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+              <div class="footer-logo">
+                <img src="./logo.png" alt="Footer Logo">
+              </div>
+              <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#shop">Shop</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+              </div>
+              <div class="footer-social">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              </div>
+            </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartData = JSON.parse(sessionStorage.getItem('cartData') || '[]');
+            const orderSummary = document.getElementById('order-summary');
+            
+            if (orderSummary) {
+                let summaryHTML = '<h2>Order Summary</h2>';
+                let subtotal = 0;
+                
+                cartData.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    summaryHTML += `
+                        <div class="order-item">
+                            <span>${item.name}</span>
+                            <span>₹${item.price.toFixed(2)} x ${item.quantity}</span>
+                            <span>₹${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                    subtotal += itemTotal;
+                });
+                
+                const discount = subtotal * 0.20; // 20% discount
+                const total = subtotal - discount;
+                
+                summaryHTML += `
+                    <div class="order-subtotal">Subtotal: ₹${subtotal.toFixed(2)}</div>
+                    <div class="order-discount">Discount (20%): -₹${discount.toFixed(2)}</div>
+                    <div class="order-total">Total: ₹${total.toFixed(2)}</div>
+                `;
+                orderSummary.innerHTML = summaryHTML;
+            }
+        });
+        </script>
+
+</body>
+</html>
